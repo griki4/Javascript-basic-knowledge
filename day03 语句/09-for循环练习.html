@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for循环练习</title>
+    <script>
+        /*let sum = 0;
+        for (let i = 1; i < 100; i++){
+            if (i % 2 != 0){
+                sum += i
+            }
+        }console.log(sum)*/
+
+        /*let m = 0;
+        let sum = 0;
+        for (let n = 1; n <=100; n++){
+            if (n % 7 == 0) {
+                m += n
+                sum++
+            }
+        }console.log(m,sum)*/
+
+        /*for (let i = 100; i < 1000; i++){
+            let m = parseInt(i / 100);
+            let n = parseInt((i-100*m)/10);
+            let p = i % 10;
+            if (m*m*m + n*n*n + p*p*p == i){
+                console.log(i)
+            }
+        }*/
+
+        /*判断质数*/
+        let num = +prompt("请输入一个大于1的整数：");
+        if (num < 1){
+            alert("不合法！")
+        }else {
+            let flag = true
+            for (let i = 2; i < num; i++){
+                if (num % i == 0){
+                    flag = false
+                }
+            }
+            if (flag){
+                alert("质数")
+            }else {
+                alert("不是质数")
+            }
+        }
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

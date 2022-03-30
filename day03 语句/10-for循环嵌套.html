@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for循环嵌套</title>
+    <script>
+    // 打印星号
+    /*for (let j = 1; j <= 5; j++){
+        document.write("*****<br />")
+    }*/
+    /*for (let i = 0; i < 5; i++){
+        for (let j = 1; j <= 5 - i; j++){
+            document.write("*")
+        }document.write("<br />")
+    }*/
+
+    //打印乘法表
+    /*for (let i = 1; i <= 9; i++){
+        for (j = 1; j <= i; j++){
+            document.write("<span>" + i + '*' + j + "=" + i*j + "</span>")
+        }document.write("<br />")
+    }*/
+
+    //打印1-100之间所有的质数
+    console.time('test');//类似python中的时间戳 用来记录程序的运行时间
+    for (let i = 2; i <= 10000; i++){
+        let flag = true;
+        //判断i是否为质数 需要获取2-i之间的所有整数
+        for (let j = 2; j < i; j++){
+            if (i % j == 0){
+                flag = false
+                break;//这里break提升了程序的性能
+            }
+        }if (flag){
+            console.log(i);
+        }
+
+    }
+    console.timeEnd('test')
+    </script>
+    <style>
+        /*span{
+            display: inline-block;
+            width: 100px;
+        }*/
+    </style>
+</head>
+<body>
+
+</body>
+</html>

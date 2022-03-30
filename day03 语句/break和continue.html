@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>break continue</title>
+  <script>
+    //break可以用来退出switch或循环语句 不能在if语句里面使用break和continue
+    //break会立即中止离他最近的循环 就近原则
+    /*for (let i = 0; i < 5; i++){
+        document.write(i)
+        break
+    }*/
+
+    /*
+    * 可以为循环语句创建一个label,来标识当前循环
+    * label:循环语句
+    * 这样可以达到终止特定循环的效果
+    * */
+    /*outer:
+    for (let i = 0; i < 5; i++){
+        console.log("外层循环" + i)
+        for (let j = 0; j < 5; j++){
+            break outer;
+            console.log(j)
+        }
+    }*/
+
+    //continue用于退出当次循环 后面的循环仍然会继续执行
+    //continue默认对离他最近的循环生效
+    for (let i = 0; i < 5; i++){
+        for (let j =0; j < 5; j++){
+            if (j == 1){
+                continue;
+            }
+            console.log("内层循环" + j);
+        }console.log(i);
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>

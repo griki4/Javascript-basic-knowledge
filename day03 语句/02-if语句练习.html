@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if语句练习</title>
+    <script>
+        /*prompt()弹出一个提示框 用户可以在提示框里面输入信息*/
+        while (true){
+            let grade = prompt("请输入成绩：")
+            if (grade <= 100 && grade >= 0){
+                break
+            }alert("请输入有效的分数！")
+        }
+        if (grade == 100){
+            alert("car")
+        }else if (grade >= 80 && grade <= 99){
+            alert("iphone")
+        }else if (grade >= 60 && grade <= 89){
+            alert('practice')
+        }else {
+            alert('nothing')
+        }
+
+
+        /*let height = prompt("身高："), rich = prompt("财产："), face = prompt("颜值");
+        if (height >= 180 && rich >= 1000 && face >= 500){
+            alert("yes")
+        }else if (height >= 180 || rich >= 1000 || face >= 500){
+            alert("OK")
+        }else{
+            alert("no")
+        }*/
+
+        /*let num1 = +prompt("请输入数字："), num2 = +prompt("请输入数字："), num3 = +prompt("请输入数字：");//快速转换为数字类型的方法
+        if (num1 < num2 && num1 < num3){
+            if (num2 < num3){
+                alert(num1 + ',' + num2 + ',' + num3)
+            }else {
+                alert(num1 + ',' + num3 + ',' + num2)
+            }
+        }else if (num2 < num1 && num2 < num3){
+            if (num1 < num3){
+                alert(num2 + ',' + num1 + ',' + num3)
+            }else {
+                alert(num2 + ',' + num3 + ',' + num1)
+            }
+        }else{
+            if (num1 > num2){
+                alert(num3 + ',' + num2 + ',' + num3)
+            }else {
+                alert(num3 + ',' + num1 + ',' + num2)
+            }
+        }*/
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>质数练习</title>
+    <script>
+        console.time('test');//类似python中的时间戳 用来记录程序的运行时间
+        for (let i = 2; i <= 100000; i++){
+            let flag = true;
+            //判断i是否为质数 需要获取2-i之间的所有整数
+            for (let j = 2; j <= Math.sqrt(i); j++){
+                if (i % j == 0){
+                    flag = false
+                    break;//这里break提升了程序的性能
+                }
+            }if (flag){
+                console.log(i);
+            }
+
+        }
+        console.timeEnd('test')
+    </script>
+</head>
+<body>
+
+</body>
+</html>

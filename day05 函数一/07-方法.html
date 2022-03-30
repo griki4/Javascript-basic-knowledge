@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>方法</title>
+    <script>
+      let obj = {};
+      obj.name = "tom";
+      obj.age = 20;
+      //对象的属性值可以是任何的数据类型 自然也可以是函数
+      obj.sayName = function fun() {
+        console.log(obj.name);
+      };
+      console.log(obj.sayName);
+      /*函数可以作为对象的属性
+      * 当函数作为对象的属性的时候 我们称这个函数为该对象的方法
+      * 调用这个函数就是调用该对象的方法
+      * 两者只有名称上的区别
+      *
+      * obj.sayName 调用方法
+      * fun() 调用函数*/
+
+      let obj2 = {
+        name:"Sara",
+        age:20,
+        sayName:function (){
+          console.log(obj2.name)
+        }
+      };
+      obj2.sayName();
+
+      //枚举对象的属性
+      /*需要使用for...in语句
+      * 语法： for(let 变量 in 对象) 类似python的遍历*/
+      let info = {
+        name:"Jack",
+        age:20,
+        gender:"man",
+        address:"New York"
+      };
+      for (let i in info) {
+        console.log(i);//这里读取的是属性名
+        console.log(info[i]);//读取属性值的方法
+      }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

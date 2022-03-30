@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数的参数</title>
+    <script>
+        /*
+        * 定义一个求和的函数
+        * a,b就是函数的形参 用来接收调用函数的时候传入的实参
+        * 实参可以是任何的数据类型
+        * */
+        function sum(a, b) {
+            console.log(a + b);
+        }
+        sum('ch', 6);
+        /*调用函数的时候解析器不会检查实参的类型
+        * 注意是否有可能接收到非法的参数 如果有可能则需要检查数据类型
+        *
+        * 解析器也不会检查实参的数量
+        *   多余的实参不会被使用
+        *   如果实参的数量少于形参 没有对应实参的形参将会是undefined*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

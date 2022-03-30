@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局作用域</title>
+    <script>
+        /*作用域
+            一个变量的作用范围
+        Js中的两种作用域
+            1.全局作用域
+                -直接编写在script标签中的代码都是全局作用域
+                -全局作用域在页面打开时创建，关闭时销毁
+                -全局作用域当中有一个全局对象window,代表浏览器的窗口，由浏览器创建我们可以直接使用
+                -全局作用域中创建的变量都会作为window对象的属性被保存,创建的函数则会保存为window对象的方法
+                -使用var let声明的变量，会在所有代码执行之前执行 如果不适用关键字则不会提前
+                -对于使用声明和表达式创建的函数来说也是一样的*/
+        function fun() {
+            let a = 10;
+        }
+        fun();
+        console.log(a);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

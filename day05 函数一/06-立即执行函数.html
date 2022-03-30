@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>立即执行函数</title>
+    <script>
+        /*立即执行函数 函数被定义完之后立即被执行
+        * 立即执行函数往往只会被执行一次*/
+        (function(){
+            alert("我需要直接被调用");
+        })();
+        (function(a, b){
+            document.write(a);
+            document.write(b);
+        })(156, 2198);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

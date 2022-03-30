@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //定义一个判断传入的数是否为偶数的函数
+        function isOu(n) {
+            return n % 2 == 0;
+        }
+        reslut = isOu(4951);
+        document.write(reslut);
+
+        //定义一个函数可以根据半径计算圆的面积
+        function area(r) {
+            return 3.14 * r * r;
+        }
+        a = area(5);
+        document.write(a);
+
+        //创建一个可以在控制台输出人的信息的函数
+        function select(o) {
+            console.log("我是" + o.name + "，今年" + o.age + "，性别" + o.gender + "，住在" + o.address + "。")
+        }
+
+
+        let obj = {
+            name:"Jack",
+            age:20,
+            gender:"man",
+            address:"Canifornia"
+        };
+        select(obj);
+        //实参可以是一个对象，也可以是一个函数
+        function fun(a) {
+            console.log("a = " + a);
+            a(obj);//这里的a是一个函数 它也可以传入参数调用
+        }
+        fun(select);
+
+        /*
+        * select()
+        *   调用函数 实际上是将函数的返回值作为参数传入新的函数
+        * select
+        *   将函数本身而不是返回值作为参数传入新的函数
+        * */
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

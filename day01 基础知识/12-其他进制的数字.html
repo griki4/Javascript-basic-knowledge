@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* js中表示十六进制的数字，以0x开头
+            八进制以0开头
+            二进制的数字以0b开头，但是不是所有的浏览器都支持 */
+        var a = 0;
+        // 十六进制
+        a = 0xff;
+        a = 0x12;
+
+        // 八进制
+        a = 070;
+
+        // 二进制
+        a = 0b10001011;
+        a = '070'; //某些浏览器当成八进制解析，有些会当成十进制解析。
+        a = parseInt(a, 8); //parseInt()中传入第二个参数，来指定数字的进制。
+        console.log(a)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

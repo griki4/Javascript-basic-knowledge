@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 强制类型转换
+            将一个类型的数据转换为另一个类型的数据
+                一般来说是将其他类型的数据转换为
+                    String Number Boolean */
+
+        /*
+        将其他类型的数据转换为String
+        方法一： 
+            调用被转换数据类型的toString()方法,该方法不会影响到原变量，而是将转换的结果返回另一个结果
+            null undefined这两个类型的数据没有toString()方法*
+        方法二：
+            调用String()函数并将被转换的数据作为参数传递给函数
+            使用String()函数转换的时候，这个函数还可以进行null和undefined的转换*/
+        var a = 123;
+        a = true;
+
+        // a = null;
+        // a = undefined;
+
+        b = a.toString();
+        console.log(typeof a);
+        console.log(a);
+        console.log(typeof b);
+        console.log(b);
+
+        var c = 123;
+        c = null;
+        c = undefined;
+        c = String(c);
+        console.log(typeof c);
+        console.log(c);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

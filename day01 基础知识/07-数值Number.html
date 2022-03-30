@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a = 123;
+        a = 'abc' * 'fdc';
+        var b = '123';
+        a = Number.MIN_VALUE;
+        /* 
+        typeof 用于检查数据类型 */
+        console.log(a); //NaN表示是一个非数字，但是他的数据类型依然是数字
+        console.log(typeof b);
+
+        /*
+        js中可以表示的数值的最大值为1.7976931348623157e+308
+        如果数值超过最大值，则会返回Infinity，表示正无穷 
+        大于零的最小值为5e-324
+        */
+
+        console.log(-Number.MAX_VALUE * Number.MAX_VALUE)
+        var c = 123 + 456;
+        c = 0.1 + 0.2;
+        console.log(c);
+        /*
+        js中整数的运算基本精确
+        但是进行浮点运算的时候可能得到不够精确的结果
+        所以尽量不要运用js进行精度较高的运算 */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

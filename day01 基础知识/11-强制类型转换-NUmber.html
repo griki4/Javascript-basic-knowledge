@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 将其他类型的数据转换为Number 
+        字符串-->数字
+            1.纯数字字符串，直接转换
+            2.字符串中有非数字的内容，则转换为NaN
+            3.空串或者全是空格的字符串,则转换为0
+        布尔值-->数字
+            true-->1  false-->0
+        null
+            转换为0  
+        undefined
+            转换为NaN  */
+        var a = '123lgk';
+        a = true;
+        a = false;
+        a = '    '
+        a = null;
+        a = undefined;
+        a = Number(a);
+        console.log(typeof a);
+        console.log(a);
+
+        /* 转换方式二：
+            parseInt()把一个字符串转换为整数
+                将一个字符串中的有效的整数部分取出来转换为数字，从左往右依次解析
+            parseFloat()把一个字符串转换为浮点数 
+                将字符串中有效的小数部分取出来转换为数字依然是从左往右一次解析*/
+        var b = '123.265px';
+        b = true;
+        // b = parseInt(b);
+        b = parseFloat(b);
+        /* 
+        对于非String类型的数据，parseInt(),parseFloat()会将其转换为String，然后再进行解析 */
+
+        console.log(typeof b);
+        console.log(b);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

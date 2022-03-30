@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* js中一共有三种逻辑运算符
+        ！ 非运算  进行一个取反操作 true变成false
+            对于非布尔值进行非运算 首先会将其转换为布尔值再取反 
+            利用这个特点可以将其他类的数据变为布尔值 取两次反就行 和Boolean()函数一样
+            
+        && 与运算 对符号两侧的值进行与运算
+            都是true返回true 有一个为false则返回false
+            js中的与属于短路的与
+            如果第一个值为false，则不会再看后面的值
+
+        || 或运算 
+            都是fasle返回false,有一个为true则返回true
+            js中的或属于短路的或
+            如果第一个值是true则不会检查第二个值*/
+        var a = undefined;
+        a = !!a;
+        console.log('a = ' + a);
+
+        var b = true && true;
+        console.log('b = ' + b);
+        false && alert('弹出窗口');
+
+        var result = false || false;
+        console.log(result);
+
+        false || alert('1111');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

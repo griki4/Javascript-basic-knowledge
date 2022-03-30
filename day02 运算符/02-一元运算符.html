@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 一元运算符 只需要一个操作数
+        + 正号 不会对数字产生影响 对一个其他数据类型做+运算 转换为Number
+
+        - 负号 对数字取反
+            对于非Number类型的值 先转换后运算
+            
+        上述两者都属于隐式类型转换*/
+        var a = true;
+        a = '18';
+        a = +a;
+        a = 1 + +'2' + 3;
+        console.log('a = ' + a);
+        console.log(typeof a);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

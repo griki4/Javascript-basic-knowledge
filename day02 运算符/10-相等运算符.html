@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* == 
+        用来比较两个值是否相等 相等返回true 不等则返回false
+        使用==比较的值不是同一类型时 会先进行转换然后再比较 大部分情况下会转换为数字来比较 */
+        console.log(1 == 1)
+        var a = '1';
+        console.log(a == 1);
+        console.log(true == '1');
+        console.log(null == 0);
+
+        /*undefined衍生于null 两者做判断会返回ture  */
+        console.log(undefined == null);
+
+        //NaN和任何值都不相等 包括它自己
+        console.log(NaN == NaN);
+
+
+
+        var b = NaN;
+        //判断b的值是否为NaN,Js提供了isNaN()来解决这种状况 是则返回true 否则返回false
+        console.log(isNaN(b));
+
+        /* !=
+        用来判断两个值是否不相等 
+        这个也会先进行数据类型的转换 */
+        var c = 10;
+        console.log(c != 4);
+
+        /* === 全等
+        不会进行数据类型的转换 如果两侧数据类型不相同 直接返回fasle */
+        console.log(1 === '1');
+
+        /* !== 不全等
+        和！=类似 但是不会进行数据类型的转换 */
+        console.log(1 !== '1');
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

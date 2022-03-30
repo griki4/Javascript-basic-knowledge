@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        对一个或者多个值进行运算
+        typeof 就是一个运算符 将数据的类型以字符串的形式返回 */
+        var a = undefined;
+        var result = typeof a;
+        console.log(typeof result);
+
+        /* 算数运算符
+        + - * / 运算符不会修改原变量的值
+        +   对于非Number类型的数据进行运算 会先将其转化为Number 任何值和NaN做运算结果都是NaN 
+            字符串加法运算 会将两个字符串拼接为一个字符串
+            任何数据类型和字符串做加法 都会被转换为字符串再运算 达到拼串效果
+        -   数字和字符串相减，是转换为数字而不是字符串运算
+        *   乘法
+        /   除法
+            任何值做- * /三种运算时，都换转换为Number类型 利用这个特性可以实现隐式类型转换 -0 /1 *1 都可以实现*/
+        var b = 0;
+        // b = b + 1;
+        c = true + b;
+        c = true + false;
+        c = null + 3;
+        c = NaN + 2;
+        c = '123' + '4560'; //字符串合并
+        c = 'juju' +
+            'gerg' +
+            'fthh'
+        c = 123 + '2'
+        c = true + 'hello'
+        c = 123;
+        c = c + '' //转换为字符串另一个方法，加上一个空串。称为隐式类型转换，由浏览器自动完成，实际上也是调用了String()函数。
+        c = 100 - 5;
+        c = 100 - true;
+        c = 100 - '1';
+        c = 2 * 2;
+        c = 2 * '5';
+        c = 2 * undefined;
+        c = 4 / 2;
+        c = 4 / true;
+        console.log('c = ' + c);
+
+        var d = 1 + 2 + '3';
+        d = '1' + 2 + 3;
+        console.log('d = ' + d);
+
+        var e = '123';
+        e = e - 0;
+        console.log(e)
+        /* 
+        % 取余数 也称为取模 */
+
+        var m = 9;
+        m = 5 % 3;
+        console.log(m);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

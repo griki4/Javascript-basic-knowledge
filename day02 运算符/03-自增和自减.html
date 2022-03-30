@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 自增 ++
+            变量在自身的基础上增加一 调用之后会修改原变量的值
+            自增分为前++（++a）和后++（a++）两者都会使原变量的值立即+1
+            不同之处在于a++和++a的值不同
+            a++等于自增以前的值
+            ++a等于自增以后的值
+        自减 --
+            变量在自身的基础上减一
+            也为a--和--a 可以按照自增一样来理解 二者的不同之处在于值*/
+        var a = 1;
+        // a++;
+        // ++a;
+        console.log(++a);
+        console.log(typeof a);
+
+        var c = 10;
+        c++;
+        console.log(c++);
+
+        var d = 20;
+        // f = d++ + ++d + d;
+        f = d++;
+        console.log(f);
+
+        var num = 10;
+        // num--;
+        // --num;
+        console.log(--num);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

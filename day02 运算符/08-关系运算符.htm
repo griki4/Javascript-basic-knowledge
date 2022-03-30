@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 比较两个值的大小
+        > 大于
+            判断结果成立返回true 不成立返回false
+        >= 判断是否大于或者等于
+        < <=
+        
+        对于非数值的比较
+            先转换为数字 再进行比较 最后的结果是布尔值
+            如果两侧的数据都是字符串 则不会转换为数字来比较 而是比较字符的Unicode编码
+            比较字符编码的时候 是一位一位对应比较 如果两位一样则继续比较下一位*/
+        var b = 2 >= 2;
+        b = 1 >= true;
+        b = 1 > '0';
+        b = 1 > null;
+        b = 1 > NaN; //任何值和NaN作比较 返回值都是false
+        b = true > false;
+        b = '11' < '5';
+        b = 'ahhv' < 'bkiji';//中文字符的比较是没有意义的
+        // 如果比较两个字符串类型的数字时，注意将其转换为数字来比较 利用+就可以进行
+        b = +'15615' < +'5';
+        console.log(b);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

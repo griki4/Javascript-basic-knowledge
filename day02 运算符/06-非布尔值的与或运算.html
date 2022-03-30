@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        非布尔值与或运算 
+            先转换为布尔值运算 最后返回原值 注意返回的是原值而不是布尔值 
+        true && true 
+        与运算 都是true 则返回后面的值
+        false && false
+        与运算 都是false 则返回前面的值
+        true和false都有 则返回false对应的值
+            如果第一个值为ture 则返回第二个值
+            如果第一个值为false 则返回第一个值
+
+        或运算
+        true || true
+            如果第一个值是true 则返回第一个值
+            如果第一个值为false 则返回第二个值
+        */
+        var a = null && 0;
+        console.log(a);
+
+        var b = null || 0;
+        b = NaN || 2;
+        console.log(b);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

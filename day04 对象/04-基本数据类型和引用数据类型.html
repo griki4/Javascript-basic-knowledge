@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本、引用数据类型</title>
+    <script>
+        /*基本数据类型：Number String Boolean Null Undefined
+        * 引用数据类型：Object
+        * 基本数据类型的值存储在栈内存中 值之间相互独立 修改一个不会影响另一个
+        * 引用数据类型则是保存在堆内存中的 每创建一个新对象就会在堆内存中开辟一个新的空间
+        *   而变量中保存的是这个空间的内存地址
+        *   如果两个变量保存了同一个内存地址 一个发生改变 另一个也会随之改变
+        *   比较两个引用数据类型的时候 比较的实际上是对应的内存地址
+        *   两个对象即使一模一样 但是它们的内存地址是不同的*/
+        let a = 123;
+        let b = a;
+        a++;
+        console.log(a,b);
+
+        let obj = new Object();
+        obj.name = "Tom";
+        let obj2 = obj;
+        obj.name = "Sara";
+        console.log(obj.name);
+        console.log(obj2.name);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

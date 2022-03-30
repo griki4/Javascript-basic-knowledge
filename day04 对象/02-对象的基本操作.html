@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象的基本操作</title>
+    <script>
+        //创建对象
+        /*使用new关键字调用的函数是构造函数
+        * 构造函数是专门用来创建对象的函数
+        * 使用typeof检查对象会返回Object*/
+        let obj = new Object();
+
+        /*在对象中保存的值称为属性
+        * 添加对象属性的语法：
+        *   对象.属性名 = 属性值*/
+        obj.name = "Tom";
+        obj.gender = "男";
+        obj.age = 20;
+
+        /*读取中的属性的语法：
+        * 对象.属性名
+        *
+        * 读取对象中没有的属性的时候 会返回Undefined*/
+        console.log(obj.age);
+
+        /*修改属性语法
+        *   对象.属性名 = 新值*/
+        obj.age = 25;
+
+        /*删除对象中的属性
+        *   delete 对象.属性名*/
+        delete obj.age;
+        console.log(obj.age);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

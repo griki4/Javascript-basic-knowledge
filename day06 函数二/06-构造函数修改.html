@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数修改</title>
+    <script>
+        /*
+        * 每创建一个新的对象 都会新建一个方法 这会占用大量的内存资源
+        * 所以考虑将都需要创建的方法提取出来*/
+        function Person(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.sayName = fun;
+
+        };
+
+        function fun() {
+            console.log(this.name);
+        };
+        //解决了问题 但是在全局作用域里定义函数会有诸多不便 比如跟其他函数冲突 所以为了解决这一问题需要引出原型对象的概念
+
+        let person1 = new Person("YOLO", 25, "man");
+        let person2 = new Person("V3", 15, "woman");
+        console.log(person1.sayName == person2.sayName);//返回false 说明虽然由同一个构造函数创建 但是两个同名的sayName方法是不一致的
+        //修改后返回true 说明此时的方法是一样的
+    </script>
+</head>
+<body>
+
+</body>
+</html>

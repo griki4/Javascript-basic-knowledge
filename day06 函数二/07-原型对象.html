@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型对象</title>
+    <script>
+        /*每创建一个函数 浏览器都会向其中传递一个prototype属性
+        *   这个属性对应的对象就是原型对象
+        * 作为普通函数调用 prototype不起作用
+        * 作为构造函数调用 则该构造函数创建的对象会包含一个隐含属性__proto__
+        *   这个属性指向的也是原型对象
+        *
+        * 原型对象就像一个公共的区域 任何通过同一个类创建的实例都可以访问到该类对应的原型对象
+        *   所以 我们可以直接在类对应的原型对象里面添加所有实例都需要的方法和属性
+        *   这样做既不会每创建一个实例就新建一个方法 也不会污染全局作用域
+        *
+        * 当我们访问一个对象的属性的时候 浏览器会首先在自身范围内取寻找
+        * 如果没有则会在对应的原型对象里面取寻找 原型对象的优先级是较低的*/
+        function Person() {
+
+        };
+
+        Person.prototype.sayName = function () {
+            alert("Hello World");
+        };
+        let person1 = new Person();
+        // console.log(Person.prototype);
+        // console.log(person1.__proto__ == Person.prototype);
+        person1.sayName();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

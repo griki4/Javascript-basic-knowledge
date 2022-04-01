@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>toString()</title>
+  <script>
+    function Person(name, age, gender) {
+        this.name = name;
+        this.age = age;
+        this.gender =gender;
+    };
+
+    Person.prototype.toString = function () {
+        return "Person[name:" + this.name + ",age:" + this.age + ",gender:" + this.gender + "]"
+    }
+
+    let person1 = new Person("Jack", 15, "man");
+    console.log(person1.toString());//直接输出对象 相当于是输出对象toString()方法的返回值
+    /*如果我们希望直接输出对象是将对象的属性都列出来
+    * 此时就需要修改创建对象的原型的toString方法*/
+  </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this补充</title>
+  <script>
+    function fun() {
+      console.log(this.name);
+    };
+
+    let person1 = {
+      name:"Dante",
+      sayName:fun
+    };
+
+    let person2 = {
+      name:"Vergil",
+      sayName:fun
+    };
+
+    //希望在调用sayName方法的时候，输出的是对应对象的名字
+
+    console.log(person2.sayName());
+  </script>
+</head>
+<body>
+
+</body>
+</html>

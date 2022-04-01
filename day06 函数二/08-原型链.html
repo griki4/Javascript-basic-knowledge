@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型链</title>
+    <script>
+        function Fun() {
+
+        }
+        Fun.prototype.name = "Tom";
+        let person = new Fun();
+
+        //用in检查对象是否有某个属性的时候 如果对象中没有但是原型中有 也会返回true
+        // console.log("name" in person);
+
+        console.log(person.hasOwnProperty(name));
+        /*hasOwnProperty也是一个属性 那么它是在原型中的吗
+        * 我们检查一下*/
+        console.log(person.hasOwnProperty("hasOwnProperty"));//这个属性也不在原型中 那么它在哪里呢
+        /*原型对象作为一个对象 实际上也是有自己的原型的 而这个hasOwnProperty就在原型的原型中*/
+        console.log("hasOwnProperty" in person.__proto__.__proto__);//返回true
+
+
+        /*一个对象有它的原型 而原型对象也有自己的原型 这就像一个链条一样将这些对象串起来 我们称为原型链
+        * 原型链的尽头就是Object对象 它不存在原型
+        * 如果一个对象的属性在Object中都无法找到 那么访问对象属性的结果就是undefined*/
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

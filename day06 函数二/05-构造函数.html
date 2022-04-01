@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数</title>
+    <script>
+        /*创建一个用来创建Person对象的函数
+        *   这就是构造函数，它和普通的函数没有区别
+        *   一般默认构造函数的首字母大写
+        *
+        * 构造函数与普通函数的区别就是调用方式
+        *   普通函数可直接调用 构造函数需要加new
+        *
+        * 构造函数的执行流程
+        *   1.创建一个对象
+        *   2.将创建的对象指定为函数的this，也就是this这里指向新建的对象
+        *   3.逐行执行函数中的代码
+        *   4.将创建的对象作为返回值返回
+        *
+        * 类和对象
+        *   使用同一个构造函数创建的对象称为一类对象 构造函数就是类
+        *   通过构造函数创建的对象 称为该类的实例
+        *
+        * this
+        *       1.函数形式调用 this指向的对象是window
+        *       2.以方法的形式调用 this指向的是调用方法的对象
+        *       3.以构造函数的形式调用 this指向构造函数创建的对象*/
+
+        function Person(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.sayName = function () {
+                document.writeln(this.name);
+            };
+        };
+
+        function Dog() {
+
+        };
+
+        let person1 = new Person("Tom", 20, "man");
+        let dog = new Dog();
+
+        /*instanceof 检查实例是否由该类创建
+        *
+        * 任何的对象都是Object类的实例 用instanceof检查的时候都会返回true*/
+        console.log(person1 instanceof Person);
+        console.log(dog instanceof Person);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

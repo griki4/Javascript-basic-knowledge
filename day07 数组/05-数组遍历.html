@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组遍历</title>
+  <script>
+    let arr = [1,2,3,4,5,6];
+
+    for (i = 0; i < arr.length; i++) {
+      console.log(arr[i]);
+    };
+
+    /*练习
+    取出这些对象中age>18的对象
+     将它们封装到一个新的数组中*/
+
+    function Person(name, age) {
+      this.name = name;
+      this.age =age;
+    };
+
+    Person.prototype.toString = function () {
+      return "Person["+this.name+","+this.age+"]"
+    }
+
+    let person1 = new Person("Tom", 18);
+    let person2 = new Person("Jack", 8);
+    let person3 = new Person("Lucy", 28);
+    let person4 = new Person("Dante", 16);
+    let person5 = new Person("Vergil", 38);
+
+    let personarray = [person1, person2, person3, person4, person5];
+
+    function select(arr) {
+      let adult = [];
+      for (j = 0; j <arr.length; j++) {//遍历数组 读取每一个元素
+        if (arr[j].age >= 18) {//筛选条件 年龄大于等于18的时候选出来
+          adult.push(arr[j]);//将符合条件的元素添加到新的数组里面
+        }
+      }
+      return adult
+    };
+
+     let result = select(personarray);
+     console.log(result);
+  </script>
+</head>
+<body>
+
+</body>
+</html>

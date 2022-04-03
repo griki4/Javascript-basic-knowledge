@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组简介</title>
+  <script>
+    /*数组（Array）
+    *   -JS中的数组的概念有点类似于python中的列表
+    *   -数组也是对象 有跟普通对象类似的功能
+    *   -不同之处在于数组是通过索引（index）来操作内部的元素的 索引是从0开始的整数
+    *   -数组存储数据的性能比普通对象好 所以数组存储数据的情况是很多的*/
+    let list = new Array();
+    // console.log(typeof list);
+
+    //向数组中添加元素 修改对应索引上的元素值也可以用这个方法
+    list[0] = 11;
+    list[1] = 22;
+    list[2] = 33;
+    document.write(list);
+
+    //获取数组的长度
+    //length除了获取数组长度 还可以规定数组的长度 多余的元素不会被收录 少于时则会保留空的元素位置
+    // console.log(list.length);
+    // list.length = 5;
+    // console.log(list[4]);//不存在的索引或者对应元素为空的索引会返回undefined
+
+    //往数组最后一个位置添加元素
+    list[list.length] = 50;
+    list[list.length] = 60;
+    list[list.length] = 90;
+    console.log(list);
+  </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>forEach</title>
+    <script>
+        let array = [1,2,3,4,5,6];
+        /*forEach方法需要传入的参数是一个函数
+        *   -该函数会被浏览器自动调用 这个函数被称为回调函数 调用的次数就是数组中元素的个数
+        *   -浏览器会向函数中传入三个参数
+        *       -1.第一个参数为当前遍历到的元素
+        *       -2.第二个参数是当前遍历到的元素的索引
+        *       -3.第三个参数是遍历的数组本身*/
+        array.forEach(function (a, b, c) {
+            console.log(a);
+            console.log(b);
+            console.log(c == array);
+        });
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

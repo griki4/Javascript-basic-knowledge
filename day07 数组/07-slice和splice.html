@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slice和splice</title>
+    <script>
+        let array = [1,2,3,4,5,6];
+        /*slice
+        *   -截取已有数组中指定的元素
+        * 参数
+        *   -参数一：start 截取开始位置的元素 包含这个元素
+        *   -参数二：end 截取结束位置的元素 不包含这个元素
+        *   传入负数参数则从右往左数
+        *   只传入一个参数 表示从这个元素开始后面的元素都截取
+        *   slice不会修改原数组*/
+
+        /*let r1 = array.slice(0,3);
+        r1 = array.slice(0,-3);
+        r1 = array.slice(2);
+
+        console.log(r1);*/
+
+
+        /*splice
+        *   -从数组中删除元素 并且返回删除的元素（一个新的数组）
+        *   -array.splice(index（开始删除位置的索引）, howmany（删除的元素数量）, item1, ....., itemX（在删除位置替换的元素）)*/
+        array.splice(2, 0, [3.1, 3.2]);//splice会修改原数组
+        console.log(array);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

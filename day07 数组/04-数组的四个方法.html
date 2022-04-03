@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组的方法</title>
+  <script>
+    /*JS 针对数组的四个常用方法
+    *   push pop shift unshift*/
+    let arr = [1,2,3,4,5,6];
+
+    /*push
+    *   -向数组的最后添加一个数据或者多个数据 并且返回数组的新长度*/
+    // arr.push(7);
+    let result = arr.push(7);
+    console.log(arr);
+    console.log(result);
+
+    /*pop
+    *   -删除数组的最后一个元素 并且返回这个被删除的元素
+    */
+    // arr.pop();
+    let r2 = arr.pop();
+    console.log(arr);
+    console.log(r2);
+
+
+    /*unshift
+    *   -向数组的头部添加一个元素 并且返回新数组的长度*/
+    let r3 = arr.unshift(0);
+    console.log(arr);
+    console.log(r3);
+
+    /*shift
+    *   -删除数组的第一个元素 并且返回被删除的这个元素*/
+    let r4 = arr.shift();
+    console.log(arr);
+    console.log(r4);
+  </script>
+</head>
+<body>
+
+</body>
+</html>

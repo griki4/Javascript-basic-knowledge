@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组的其他方法</title>
+    <script>
+        let array = [1,2,3];
+        let array2 = [4,5,6];
+        let array3 = [7,8,9];
+        let array4 = [1,8,4,6,3,9,7,5,16,29]
+
+
+        /*concat
+        *   连接两个或多个数组，并返回已连接数组的副本.
+        *   不会对原数组产生影响*/
+        console.log(array.concat(array2,array3));
+
+        /*join
+        *   将数组的所有元素连接成一个字符串
+        *   不会对原数组产生影响
+        *   在join中可以指定一个字符串作为参数 这个参数会作为新字符串的连接符*/
+        let a = array.join("+");//使用+号连接 不指定连接符号则默认使用逗号
+        console.log(a);
+
+        /*reverse
+        *   反转数组中元素的顺序
+        *   会修改原数组*/
+        console.log(array2.reverse());
+
+        /*sort
+        *   对数组中的元素进行排序 排序的依据是Unicode编码 Unicode编码排序有时候会出错 所以我们可以利用回调函数来定义排序规则
+        *   在sort()中添加回调函数
+        *       -回调函数需要两个形参
+        *       -浏览器依次将数组中的元素作为实参传入
+        *   浏览器根据回调函数的返回值决定元素的顺序
+        *       1.返回值大于0 对调元素顺序
+        *       2.返回值小于0 不交换位置
+        *       3.等于0 不交换位置*/
+        let b = array4.sort(function (a, b) {
+            // return a - b;//升序排列
+            return b - a;//降序排列
+        });
+        console.log(b);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

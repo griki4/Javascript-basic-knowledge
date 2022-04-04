@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math</title>
+    <script>
+        /*Math对象
+        *   Math和其他类不同 他不是构造函数
+        *   Math是一个工具类 里面封装了一些数学运算相关的属性和方法
+        *       Math.PI表示的就是圆周率
+        *       Math.abs表示获取绝对值*/
+
+        let a = -12.394;
+        console.log(Math.abs(a));
+
+        /*ceil 对数据向上取整
+        * floor 对数据向下取整数
+        * round 对数据四舍五入 也就是取到相隔最近的整数*/
+        console.log(Math.ceil(1.1));
+        console.log(Math.floor(1.9));
+        console.log(Math.round(1.3));
+
+        /*random 生成0-1之间的一个随机数
+        * 如果要生成一个x--y之间的随机数 则使用
+        * Math.round(Math.random()*(y - x)) + x*/
+        for (let i = 0; i < 11; i++) {
+            console.log(Math.round(Math.random()*5) + 2);
+        };
+
+        /*max 获取多个数中的最大值
+        * min 获取多个数中的最小值*/
+
+        let max = Math.max(1,54,79,19,1);
+        console.log(max);
+
+        /*pow(x,y)
+        *   返回x的y次幂
+        *
+        * sqrt()
+        *   返回一个数的平方根*/
+
+        let mi = Math.pow(2, 10);
+        console.log(mi);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

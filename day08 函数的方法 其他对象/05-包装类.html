@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>包装类</title>
+    <script>
+        /*JS中有三个包装类
+        *   通过它们可以将基本类型的数据转换为对象
+        * String（）
+        *   -将基本类型的字符串转换为String对象
+        * Number（）
+        *   -将基本类型的字数字转换为Number对象
+        * Boolean（）
+        *   -将基本类型的布尔值转换为Boolean对象
+        *
+        *   实际开发中不会使用这种基本数据类型的对象 容易产生歧义*/
+
+        let a = new String("name");
+        let str = "name";
+        console.log(a === str);//值相同 但是数据类型不一样
+
+        /*基本数据类型对象的使用
+        *   当我们对基本数据类型调用一些属性或者方法的时候
+        *   浏览器会将基本类型的数据临时转换为对象 然后再调用方法
+        *   调用完成之后 再将其装转换为基本类型的数据
+        *
+        *   也就是这是浏览器自动启用的 一般我们布手动使用*/
+        let b = 123;
+        b = b.toString();
+        console.log(b);
+        console.log(typeof b);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date对象</title>
+    <script>
+        /*Date对象
+        *   -JS中使用Date对象来表示时间*/
+
+        let time = new Date();//直接利用构造函数创建一个对象 会封装代码执行时的时间
+        console.log(time);
+
+        let day = new Date("12/06/2022 12:36:18");//传入表示时间的字符串 即可创建一个指定时间的对象
+        //时间的格式  月/日/年 时:分:秒
+        console.log(day);
+
+        /*针对Date对象的方法
+        * getDate 获取日期 也就是几号
+        * getDay 获取星期几 注意范围为0-6 0表示周日
+        * getMonth 获取月份 0表示1月 1表示2月 以此类推
+        * getFullYear 获取年份
+        * 。。。详细的可以查看W3C的手册*/
+
+        // let d = time.getDate();
+        // let d = time.getDay();
+        // let d = time.getMonth();
+        let d = time.getHours();
+        console.log(d);
+
+        /*getTime 获取当期对象日期的时间戳
+        *   表示的实际上时格林威治时间（1970年1月1日 0时0分0秒）至日期对象所花费的毫秒数
+        *   计算机底层保存时间都是使用的时间戳*/
+        let c = time.getTime();
+        console.log(c);
+
+        /*Date.now
+        *   获取执行当前代码的时间戳的方法
+        *   可以用来计算程序的运行时间
+        * */
+
+        let start = Date.now();
+        for (let i = 0; i < 100; i++) {
+            console.log(i);
+        };
+        let end = Date.now();
+        console.log(end-start);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

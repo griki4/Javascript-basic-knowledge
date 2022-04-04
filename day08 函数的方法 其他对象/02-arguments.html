@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arguments</title>
+    <script>
+        /*函数在被调用的时候浏览器会默认传递两个参数
+        *   -1.执行上下文对象 this
+        *   -2.封装实参的对象 arguments
+        *-arguments是一个类数组对象 可以通过索引进行操作 也能获取到它的长度
+        * -我们传入的实参都会封装在arguments中
+        *   在不定义形参的情况下也可以通过arguments的索引来使用实参*/
+        function fun() {
+            console.log(arguments.length);
+            console.log(arguments[0]);
+            console.log(arguments[1]);
+        };
+
+        fun("hello",true);//未定义形参 但是通过索引我们依然访问到了实参
+
+        /*callee
+        *   argument中的一个方法
+        *   指向一个函数对象 该函数对象就是当前正在执行的函数*/
+
+        function def() {
+            console.log(arguments.callee);
+        };
+
+        def();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

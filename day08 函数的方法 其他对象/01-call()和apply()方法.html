@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>call apply</title>
+    <script>
+        /*call apply
+        *   -两个方法都是函数对象的方法 要通过函数来调用
+        *   -调用后函数执行
+        *
+        *   -两个方法都可以指定一个对象为参数 这个对象会被指定为函数的this
+        *
+        *   不同之处
+        *       -1.call可以直接在对象后传入实参
+        *       -2.apply传入的实参必须要封装到数组*/
+
+        function fun(a, b) {
+            console.log(this.name);
+            console.log(a);
+            console.log(b);
+        };
+
+        let person = {
+            name:"Jack"
+        };
+
+        // fun.call(person, 2, 3);//调用call方法函数执行
+        fun.apply(person, [2, 3]);//调用apply方法函数执行
+
+
+        /*this
+        *   1.函数方法调用时 指向window
+        *   2.方法形式调用  指向调用方法的对象
+        *   3.构造函数形式调用 指向构造函数创建的对象
+        *   4.call apply方法调用 指向参数中指定的对象*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

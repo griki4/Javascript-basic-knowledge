@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串方法</title>
+    <script>
+        let str = "Hello World";
+
+        /*length
+        *   返回字符串的长度
+        *   计算机是以字符数组的形式保存字符串的 ["H", "e", "l"...]*/
+        console.log(str.length);
+
+        /*charAt()
+        *   -返回指定位置的字符
+        *
+        * charCodeAt()
+        *   -返回指定位置字符的Unicode编码*/
+        let r = str.charAt(0);
+        let g = str.charCodeAt(0);
+        console.log(r,g);
+
+        /*fromCharCode()
+        * 根据字符编码获取字符*/
+        g = String.fromCharCode(72);
+        console.log(g);
+
+        /*concat()
+        *   连接两个或者多个字符串*/
+        let str2 = " JavaScript"
+        g = str.concat(str2);
+        console.log(g);
+
+        /*indexOf
+        *   检查一个字符串中是否有指定内容 返回第一次出现位置的索引
+        *   如果不存在则返回-1
+        *   第二个参数表示从指定的索引位置开始寻找
+        * lastIndexOf()
+        *   和indexOf一样 不过是从右往左开始寻找*/
+        k = g.indexOf("r", 9);
+        l = g.lastIndexOf("r", 20);
+        console.log(k, l);
+
+        /*slice
+        *   截取指定位置的内容
+        * subString
+        *   和slice的使用方法类似 效果是截取两个指定索引间的字符
+        *   不同之处在于该方法不能传递负值作为参数 传递负值的时候默认为0*/
+        let str3 = "abcdefgh";
+        let re = str3.slice(0, 3);
+        console.log(re);
+
+        /*split()
+        *   将字符串转换为字符数组
+        *   参数是拆分的依据*/
+
+        let o = str.split("o");
+        console.log(o);
+
+        /*toLowerCase
+        *   将字符串转换为小写
+        * toUpperCase
+        *   将字符串转换为大写*/
+        let p = str.toLowerCase();
+        p = str.toUpperCase();
+        console.log(p);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

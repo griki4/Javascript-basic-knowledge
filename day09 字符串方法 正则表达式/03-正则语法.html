@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则语法</title>
+    <script>
+        /*字面量创建正则表达式
+        * 使用构造函数和字面量的方式各有优劣 要根据情况而定*/
+        let reg = /a/i;//使用字面量创建正则表达式
+
+        /*/a|b/
+        *   表示查找一个字符串中是否含有a或b*/
+        console.log(reg.test("hfauwe"));
+
+        /*[]
+        *   查找一个字符串中是否含其中的任意字符
+        * [0-9] 是否含有数字
+        * [A-Z] 是否含大写字母
+        * [a-z] 是否含小写字母
+        * [A-z] 是否函数有字母*/
+        let reg2 = /[nhk]/;
+        let reg3 = /a[sfd]b/
+        console.log(reg2.test("Dante"));
+        console.log(reg3.test("asb"))
+
+        /*[^ ]
+        * 表示是否不含有其中的任意字符 跟单独的方括号相反的用法*/
+        let r = /[^DH]/;
+        console.log(r.test("D"));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式语法 元字符</title>
+    <script>
+        /*元字符
+        * . 查找单个字符 除了换行和结束符
+        *   如何在字符串中查找\和.*/
+        let str = "hbfdhu489sfmk";
+        let reg = /\\/;
+        reg2 = /\./;//使用转移字符来查找
+
+
+        /*其他的元字符
+        * \w 查找所有的字母和数字
+        * \W 查找非字母和数字   大小写表示相对 后面的元字符同理
+        * \d \D 查找数字和非数字
+        * \s \S 查找空白和非空白字符
+        * \b \B匹配单词边界和非单词边界*/
+
+        reg = /\w/;
+        reg = /\W/;
+        reg = /\d/;
+        console.log(reg.test(str));
+
+        /*单词边界
+        *   简单来说就是单词是否是独立存在的
+        *   比如要查找child这个单词 如果按照之前的方法直接查找
+        *   那么字符串中如果只有children而没有child的话也会返回true 添加单词边界可以避免这种情况*/
+        let str2 = "children";
+        let r = /\bchild\b/;
+        console.log(r.test(str2));//false child并不是独立的
+
+
+        /*应用 去除用户输入数据中前面和后面的空格
+        *   可以使用空串替换的方式*/
+        let m = prompt("请输入用户名：");
+        m = m.replace(/^\s*|\s*$/g,"");//开头和结尾位置的空格
+        console.log(m);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

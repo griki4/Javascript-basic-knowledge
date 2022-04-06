@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式</title>
+    <script>
+        /*情形：
+        *   需要做一个利用邮箱注册账号的功能 如何检查用户输入的邮箱是合法的
+        *   1.前面是XXXX
+        *   2.后面跟一个@
+        *   3.后面是XXX
+        *   4.最后是.com
+        *简单来说就是需要检查匹配到对应的字符串
+        *
+        *
+        *为了解决这种模式匹配的问题 JavaScript提供了RegExp对象 也就是正则表达式
+        * 语法
+        *   let a = new RegExp("正则表达式", "匹配模式");
+        *   匹配模式 i 忽略大小写
+        *           g 全局匹配*/
+
+        let reg = new RegExp("a");
+        str = "avrewerfas";
+
+        /*正则表达式的方法
+        * test()
+        *   见擦汗一个字符串是否符合正则表达式的规则 返回布尔值*/
+        let a = reg.test(str);//这里就是检查str中是否含有字符a
+        console.log(a);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

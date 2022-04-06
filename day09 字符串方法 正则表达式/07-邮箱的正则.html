@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>邮箱的正则</title>
+    <script>
+        /*邮箱的结构
+        * 字母和数字下划线开头（3位以上）  . 字母和数字下划线开头（1位以上 可有可无）  @  字母或数字（2-3位） .字母或数字（2-5位）  字母或数字（2-5位）（可有可无）
+        * /^\w{3,}              (\.\w{1,})*                    @  \[A-z0-9]{2,3}          (.\w{2,5}){1,2}  /*/
+        let emailReg = /^\w{3,}(\.\w{1,})*@[A-z0-9]{2,3}(.\w{2,5}){1,2}/;
+        let email = "15846wdwq@123.com";
+        console.log(emailReg.test(email));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

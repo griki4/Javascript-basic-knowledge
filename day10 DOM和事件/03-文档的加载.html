@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文档加载</title>
+    <script>
+        /*浏览器在执行代码的时候 是逐行执行的
+        *  如果我们将JS代码写在前面 那么在页面渲染HTML元素之前 会先运行JS代码
+        *  这样可能会发生错误或者影响页面加载速度*/
+
+        /*为window绑定一个onload事件
+        *   可以让脚本在页面渲染完成之后再加载脚本 提升用户体验*/
+        window.onload = function () {
+            let btn = document.getElementById("btn");
+            btn.onclick = function () {
+                alert("修改完成！");
+            };
+        };
+    </script>
+</head>
+<body>
+<button id="btn">点击修改</button>
+</body>
+</html>

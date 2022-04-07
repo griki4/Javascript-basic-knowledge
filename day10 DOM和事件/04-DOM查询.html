@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM查询</title>
+    <script>
+        /*除了getElementById这种方法之外 还有其他方法可以获取到对象
+        *   根据它们的名字就能做到
+        *
+        * getElementsByTagName
+        *   根据标签名来获取一组标签 会返回一个数组
+        * getElementsByClassName
+        *   根据类名来获取对象，返回数组
+        *两种方法获取到的都是标签数组 即使只获取到了一个标签也是如此
+        * 根据这个特性 我们可以通过索引来操作*/
+        window.onload = function () {
+            let getli = document.getElementsByTagName("li");
+            let getclass = document.getElementsByClassName("li1");
+            console.log(getclass[0].innerHTML);
+            for (let i = 0; i < getli.length; i++) {
+                console.log(getli[i].innerHTML);//innerHTML可以获取标签中的文本内容
+            };
+        };
+
+        </script>
+</head>
+<body>
+<div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <ul>
+        <p class="li1">类名1</p>
+        <li class="li2"></li>
+        <li class="li3"></li>
+        <li class="li4"></li>
+    </ul>
+</div>
+</body>
+</html>

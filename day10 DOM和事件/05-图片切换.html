@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片切换demo</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        #outer {
+            width: 500px;
+            height: 350px;
+            margin: 50px auto;
+            padding: 10px;
+            background-color: skyblue;
+            text-align: center;
+        }
+
+        .img {
+            display: block;
+            width: 450px;
+            height: 300px;
+            margin: auto;
+        }
+
+    </style>
+    <script>
+        window.onload = function () {
+            //获取两个按钮
+            let prve = document.getElementById("prev");
+            let next = document.getElementById("next");
+
+            //获取图片
+            let img = document.getElementsByTagName("img")[0];
+
+            //创建图片路径的数组
+            let imgArray = ["image/img1.jpg", "image/img2.jpg", "image/img3.jpg", "image/img4.jpg"];
+            let index = 0;
+
+            //需要一个类似导航一样的功能来告诉用户当前是哪一张图片
+            let info = document.getElementById("info");
+
+            //为这两个按钮绑定各自的单击事件
+            prve.onclick = function () {
+                //修改图片的路径
+                //应该有一个标识来记录当前浏览的图片路径在数组中的索引 以便进行切换
+                index--;
+                //切换到第一张图片的时候 我们希望上一张图片是之前的最后一张图片
+                if (index == -1) {
+                    index = 3;
+                }
+                img.src = imgArray[index];
+                info.innerHTML = "第"+(index+1)+"张 共"+imgArray.length+"张";
+            };
+
+            next.onclick = function () {
+                //修改图片的路径
+                index++;
+                if (index == 4) {
+                    index = 0;
+                }
+                img.src = imgArray[index];
+                info.innerHTML = "第"+(index+1)+"张 共"+imgArray.length+"张";
+            };
+
+        };
+    </script>
+</head>
+<body>
+    <div id="outer">
+        <p id="info">第1张 共4张</p>
+        <img src="image/img1.jpg" alt="" class="img">
+        <button id="prev">上一张</button>
+        <button id="next">下一张</button>
+    </div>
+</body>
+</html>

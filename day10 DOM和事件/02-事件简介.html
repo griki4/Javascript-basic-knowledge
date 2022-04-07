@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件简介</title>
+</head>
+<body>
+<!--在标签中直接通过属性来绑定事件 代码耦合的写法 不推荐-->
+    <button id="btn" onclick="alert('修改完成')">点击修改</button>
+    <script>
+        /*事件：就是文档或浏览器窗口中发生的一些特定的交互瞬间。
+        对于 Web 应用来说，有下面这些代表性的事件：点击某个元素、将鼠标移动至某个元素上方、关闭弹窗等等。
+        JavaScript 是以**事件驱动为核心**的一门语言。JavaScript 与 HTML 之间的交互是通过事件实现的。*/
+
+        /*为按钮绑定一个处理事件的函数来响应事件
+        * 事件触发的时候函数才会被调用*/
+        //1.获取对象
+        let btn = document.getElementById("btn");
+
+        //2.绑定一个单击事件
+        btn.onclick = function () {
+            alert("修改完成");
+        };
+    </script>
+</body>
+</html>

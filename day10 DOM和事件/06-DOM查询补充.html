@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM查询</title>
+  <script>
+      /*DOM节点之间并不是相互孤立的
+      * 因此可以通过DOM节点之间的关系对它们进行访问*/
+
+      /*访问一个元素的子节点
+      * getElementsByTagName 获取某个元素下某个的子元素
+      * childNodes 获取所有子节点 children 获取所有的子元素(只返回HTML节点而不包含文本节点)
+      * firstChild 获取第一个子节点 不是子元素而是子节点 换行1也会被看作是子节点
+      *     firstElementChild 获取第一个子元素
+      * lastChild 获取最后一个子节点
+      *     lastElementChild 获取最后一个子元素*/
+      window.onload = function () {
+          let id1 = document.getElementById("ul");
+          let child = id1.children;
+          child = id1.firstChild;//返回text 因为换行也被视为一个文本节点
+          child = id1.lastElementChild.innerHTML;
+          console.log(child);
+          /*for (let i = 0; i < child.length; i++) {
+              console.log(child[i].innerHTML);
+          };*/
+
+      /*获取父节点*/
+          let id2 = document.getElementById("province");
+          let c2 = id2.parentElement;
+          console.log(c2);
+
+      /*获取兄弟节点
+      * previousSibling 获取前一个兄弟节点
+      *     previousElementSibling 前一个元素
+      * nextSibling 获取下一个兄弟节点
+      *     nextElementSibling 获取下一个元素*/
+          let id3 = document.getElementById("province2");
+          let c = id3.previousElementSibling;
+          c = id3.nextElementSibling.innerHTML;
+          console.log(c);
+
+
+      };
+
+  </script>
+</head>
+<body>
+<div>
+    <div>
+        <ul id="ul">
+            <li>北京</li>
+            <li>上海</li>
+            <li>深圳</li>
+        </ul>
+    </div>
+    <div>
+        <ol id="ol">
+            <li id="province">黑龙江</li>
+            <li id="province2">辽宁</li>
+            <li>吉林</li>
+        </ol>
+    </div>
+</div>
+</body>
+</html>

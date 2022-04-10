@@ -3,8 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM其他方法</title>
+        <script>
+        window.onload = function () {
+            //body 获取页面中的body标签
+            let body = document.body;
+            console.log(typeof body);
+
+            // document.documentElement 获取页面中的根标签 html
+            let html = document.documentElement;
+            console.log(html);
+
+            //all 获取页面中中的所有标签
+            let all = document.all;
+            for (let i = 0;i < all.length;i++) {
+                console.log(all[i]);
+            }
+
+            // document.getElementsByClassName() 通过类名获取元素 不兼容IE8
+            let box = document.getElementsByClassName("box1");
+            console.log(box);
+
+            // document.querySelector() 该方法兼容IE8浏览器
+            //通过CSS选择器的形式获取元素 多个符合条件的元素时只返回第一个
+            let box1 = document.querySelector(".box1 .box");
+            console.log(box1.innerHTML);
+
+            // document.querySelectorAll()
+            //返回一个数组 内部包含所有符合条件的元素
+            let box2 =document.querySelectorAll(".box1 .box");
+            console.log(box2);
+        }
+    </script>
+
 </head>
 <body>
-
+<div class="box1">
+    <div class="box">内部元素</div>
+</div><div class="box1">
+    <div class="box">内部元素</div>
+</div><div class="box1">
+    <div class="box">内部元素</div>
+</div>
+<div></div>
 </body>
 </html>

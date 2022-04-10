@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM增删改</title>
+  <script>
+    window.onload = function () {
+      // document.createElement() 创建一个新的节点 参数为节点名称（标签名）
+      let li1 = document.createElement("li");
+
+      // document.createTextNode() 创建一个文本节点
+      let text = document.createTextNode("成都");
+
+      // appendChild 在父节点最后插入一个子节点
+      li1.appendChild(text);
+      console.log(li1);
+      let ul = document.getElementsByTagName("ul")[0];//返回的是数组记得取出对应的标签
+      ul.appendChild(li1);
+      console.log(ul);
+
+      // insertBefore 在指定的节点前插入一个节点
+        let city = document.getElementsByClassName("city")[0];
+        ul.insertBefore(li1, city);
+
+      // replaceChild 替换指定的节点
+        ul.replaceChild(li1,city);
+
+
+      // removeChild 删除父节点下的子节点
+        let bj = document.getElementsByTagName("li")[0];
+        // ul.removeChild(bj);
+        //特别注意删除自己节点的方法
+        bj.parentNode.removeChild(bj);
+
+
+
+
+        /*添加元素还有一个方法
+        * 各有优劣*/
+        let cd = document.createElement("li");
+        cd.innerHTML = "成都";
+        ul.appendChild(cd);
+
+
+
+    }
+  </script>
+</head>
+<body>
+  <ul>
+    <li>北京</li>
+    <li class="city">上海</li>
+    <li>广州</li>
+  </ul>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+    <script>
+        //点击按钮修改盒子的大小
+        window.onload = function () {
+            //获取盒子和按钮
+            let box = document.getElementsByClassName("box")[0];
+            let btn = document.getElementsByClassName("btn01")[0];
+            btn.onclick = function () {
+                /*修改样式
+                *  语法：对象.style.属性 = 样式值（字符串的形式）*/
+                box.style.width = "300px";
+                box.style.height = "300px";
+                box.style.backgroundColor = "red";//background-color这样的写法在JS中是不合法的 需要改写成大驼峰写法
+            };
+
+            //点击读取盒子的样式
+            //JS读取和修改的都是行内样式 内联样式和外部样式这种方法不能读取到
+            let btn2 = document.getElementsByClassName("btn02")[0];
+            btn2.onclick = function () {
+                alert(box.style.width)
+            }
+        };
+
+    </script>
+</head>
+<body>
+<button class="btn01">点击修改样式</button>
+<button class="btn02">点击读取样式</button>
+<br>
+<br>
+<div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>其他样式的相关属性</title>
+    <style>
+        #box {
+            width: 600px;
+            height: 600px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+        #box1 {
+            width: 300px;
+            height: 200px;
+            background-color: skyblue;
+            margin: 50px auto;
+            overflow: scroll;
+            border: 5px solid black;
+            position: relative;
+            padding: 15px;
+        }
+
+        #box11 {
+            width: 200px;
+            height: 600px;
+            background-color:red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //返回元素的可见高度和宽度
+            /*clientWidth = width + padding
+            * clientHeight = height + padding 二者都是只读 不支持修改*/
+            let box1 = document.getElementById("box1");
+            let box11 = document.getElementById("box11");
+            let btn = document.getElementById("btn");
+
+            //获取元素的整体宽高
+            /*offsetWidth = border + padding + width
+            * offsetHeight = border + padding + height*/
+
+            //offsetParent 获取当前元素的定位父元素（最近的） 父元素全无定位则获取body
+
+            /*offsetLeft 当前元素相较于其定位父元素的水平偏移量
+            * offsetTop 当前元素相较于其定位父元素的垂直偏移量
+            * 二者都是从父亲的padding开始算起 而不是border*/
+
+            /*scrollWidth 获取整个滚动区域的高度 包括padding和border
+            * scrollHeight
+            * scrollLeft 水平滚动条滚动的距离
+            * scrollTop 竖向滚顶条滚动的距离*/
+            btn.onclick = function () {
+                // alert(box1.clientWidth);
+                // alert(box1.offsetWidth);
+                // alert(box11.offsetParent);
+                // alert(box11.offsetLeft);
+                // alert(box1.scrollHeight);
+                alert(box1.scrollTop);
+                /*实战经验
+                * 当 scrollHeight - scrollTop = clientHight等式成立的时候
+                * 说明滚动条滚动到底了*/
+            }
+
+
+
+        }
+    </script>
+</head>
+<body>
+<button id="btn">点击获取样式</button>
+<div id="box">
+    <div id="box1">
+        <div id="box11"></div>
+    </div>
+</div>
+</body>
+</html>

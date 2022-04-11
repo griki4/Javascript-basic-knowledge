@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>读取元素样式</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            /*width: 200px;*/
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+    <script>
+        //获取当前元素正在显示的样式 currentStyle
+        //只有IE OPera支持
+        window.onload = function () {
+            let box = document.getElementById("box");
+            let btn = document.getElementById("btn");
+            btn.onclick = function () {
+              // alert(box.currentStyle.width);
+                /*其他浏览器读取当前样式的方法 getComputedStyle
+                * 两个参数 参数一 需要获取样式的对象
+                *           参数二 伪元素 一般都是传null
+                * 这里即使我们不设置宽度 也即是宽度自适应的时候 该方法也会读取到宽度的实际值
+                * 该方法返回的是一个封装了样式的对象*/
+                let obj = getComputedStyle(box, null);
+                alert(obj.width);//访问具体样式的时候 需要使用 对象名.属性名 的方法
+            };
+        };
+
+        //两种方法都是只读样式 要修改样式还是需要style
+
+        //兼容所有浏览器的写法 为方便跨平台网页的正常浏览 给出一种兼容的写法
+        /*定义一个函数
+        *   参数分别是要获取样式的元素和要获取的样式
+        *   让函数判断浏览器中有哪种方法就用哪种*/
+        function getStyle(obj, style) {
+            if (window.getComputedStyle) {//正常的浏览器
+                return getComputedStyle(obj, null)[style];
+            }
+            return obj.currentStyle[style];//IE 浏览器
+        }
+
+    </script>
+</head>
+<body>
+<button id="btn">点击读取样式</button>
+<br>
+<br>
+<div id="box"></div>
+</body>
+</html>

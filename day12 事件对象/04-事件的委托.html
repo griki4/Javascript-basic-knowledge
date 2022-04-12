@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件委托</title>
+</head>
+<body>
+<button id="btn">添加超链接</button>
+<ul id="ul">
+    <li><a href="#" class="link">超链接1</a></li>
+    <li><a href="#" class="link">超链接2</a></li>
+    <li><a href="#" class="link">超链接3</a></li>
+
+</ul>
+<script>
+    //事件绑定一次 可以应用于同名的所有元素
+    //比如应用于ul中所有的li
+    //最好的解决办法就是利用事件的冒泡 将事件绑定给离他们最近的父元素 这样所有的子元素（即使是新添加的也能触发绑定的事件）
+    let ul = document.getElementById("ul");
+    let btn = document.getElementById("btn");
+    ul.onclick = function () {
+        if (event.target.className == "link") {
+            alert("冒泡")
+        }
+
+    }
+
+    btn.onclick = function () {
+        let li =document.createElement("li");
+        li.innerHTML = "<a href=\"#\" class='link'>新的链接</a>"
+        ul.append(li);
+    }
+
+    /*这样做虽然解决了问题 但是ul全局都会触发事件
+    * 不止是超链接这几个地方会触发啊
+    * 所以需要利用target判断触发事件的元素是谁*/
+</script>
+</body>
+</html>

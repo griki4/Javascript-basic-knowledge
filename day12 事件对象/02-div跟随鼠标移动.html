@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跟随移动</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            position: absolute;/*跟随移动需要添加定位*/
+        }
+    </style>
+</head>
+<body height="10000px">
+    <div id="box1"></div>
+    <script>
+        //让div跟随鼠标移动
+        let box = document.getElementById("box1");
+        document.onmousemove = function (event) {//保证在整个窗口中都跟随移动
+            event = event || window.event;
+            //不同的浏览器认为滚动条的距离是属于body还是html标签的 采用兼容写法
+            let sl = document.body.scrollLeft || document.documentElement.scrollLeft;
+            let st = document.body.scrollTop || document.documentElement.scrollTop;
+
+            //为了兼容更多的浏览器 可以利用滚动条的滚动距离来解决
+
+            //client计算的是与当前窗口的相对位置
+            //div的偏移量计算的是相对其父元素而言的
+            let x = event.clientX;
+            let y = event.clientY;
+
+            //page的写法获取当前窗口的相对坐标 但是不兼容IE8一下的浏览器
+            /*let x = event.pageX;
+            let y = event.pageY;
+*/
+            box.style.left = x + sl + "px";
+            box.style.top = y + st + "px";
+        }
+    </script>
+</body>
+</html>

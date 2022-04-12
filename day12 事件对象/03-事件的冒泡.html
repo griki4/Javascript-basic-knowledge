@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡</title>
+  <style>
+    #s1 {
+      background-color: skyblue;
+    }
+
+    #box {
+      width: 300px;
+      height: 300px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+<div id="box">我是div<span id="s1">我是span</span></div>
+<script>
+  /*事件冒泡：当一个元素上的事件被触发的时候（比如说鼠标点击了一个按钮），同样的事件将会在那个元素的所有祖先元素中被触发。
+  这一过程被称为事件冒泡；这个事件从原始元素开始一直冒泡到DOM树的最上层。
+
+  开发中大部分情况我们都会利用事件冒泡的特性，特殊情况我们也需要取消冒泡*/
+  let box = document.getElementById("box");
+  let s = document.getElementById("s1");
+  let body = document.documentElement;
+  s.onclick = function () {
+    alert("我是span的响应函数");
+    //取消事件冒泡的方法
+    event.cancelBubble = true;//事件不会向上冒泡
+  }
+
+  box.onclick = function () {
+    alert("我是div的响应函数");
+  }
+
+  body.onclick = function () {
+    alert("我是body的响应函数");
+  }
+</script>
+</body>
+</html>

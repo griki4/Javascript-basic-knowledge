@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+</head>
+<body>
+<button id="btn">点击绑定</button>
+<script>
+    /*有时候需要给一个事件绑定不止一个响应函数
+    *   对象.事件的绑定方法 后绑定的事件会覆盖先绑定的事件
+    * addEventListener
+    * 参数一 要绑定的事件 字符串形式不加on
+    * 参数二 回调函数 事件触发时执行的函数
+    * 参数三 布尔值 true表示在捕获阶段触发 false表示在冒泡阶段触发 一般传入false
+    * addEventListener触发事件的顺序是根据绑定的顺序触发的*/
+    let btn = document.getElementById("btn");
+    btn.addEventListener("click", function () {
+        alert(this)
+    },false)
+
+    btn.addEventListener("click", function () {
+        alert("2")
+    },false)
+
+    btn.addEventListener("click", function () {
+        alert("3")
+    },false)
+
+
+    /*addEventListener的方法IE8以下的浏览器不兼容
+    * 针对IE8以下的浏览器 可以使用
+    * attachEvent
+    * 参数一 绑定的事件 字符串形式需要加on
+    * 参数二 回调函数
+    *
+    *
+    * 注意事项：一般来说我们给某个事件绑定的响应函数 响应函数中的this应该是绑定该事件的对象 上面的例子中是btn
+    * 但是attachEvent中响应函数的this却是window
+    * attachEvent触发绑定事件的顺序是从后往前触发的*/
+
+
+
+    /*兼容性写法 这里需要注意的就是这个addEvent方法中this的指向问题
+    * 函数的三个参数
+    *   -需要绑定事件的对象
+    *   -要绑定的事件
+    *   -回调函数 事件触发时执行的函数*/
+
+    function bind(obj, eventStr, callback) {
+        if (obj.addEventListener) {
+            obj.addEventListener(eventStr, callback, false);
+        }else{
+            obj.attachEvent("on"+eventStr, function () {
+                callback.call(obj);//attachEvent的特殊性让我们需要重新指定回调函数应用的对象 也就是修改this的指向
+                //此时this就会指向绑定事件的对象了
+            })//直接书写callback，则回调函数应用的对象(this)会是window而不是obj
+        }
+    };
+</script>
+</body>
+</html>

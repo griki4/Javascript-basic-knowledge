@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象</title>
+  <style>
+    #areaDiv {
+      width: 500px;
+      height: 300px;
+      border: 2px solid black;
+    }
+
+    #ShowMsg {
+      width: 500px;
+      height: 50px;
+      border: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div id="areaDiv"></div>
+  <br>
+  <br>
+  <div id="ShowMsg"></div>
+  <script>
+    //鼠标移动的事件
+    let area = document.getElementById("areaDiv");
+    let show = document.getElementById("ShowMsg");
+
+    //事件响应函数被触发，浏览器会将一个事件对象传递进函数
+    //事件对象中封装了当前事件相关的一切信息
+    area.onmousemove = function (event) {
+      //为了兼容IE浏览器还需要判断一下event这个参数
+      event = event || window.event;
+      let x = event.clientX;
+      let y = event.clientY;
+      show.innerHTML = "x = " + x + ", y = " + y;
+    }
+
+    /*clientX
+    * clientY 获取鼠标光标的坐标*/
+  </script>
+</body>
+</html>

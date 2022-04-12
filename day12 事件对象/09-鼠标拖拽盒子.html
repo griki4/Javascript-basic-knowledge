@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        //获取盒子
+        let box = document.getElementById("box");
+        box.onmousedown = function (event) {  //在盒子上按下鼠标的时候将盒子和鼠标绑定
+            let ol = event.clientX - box.offsetLeft;
+            let ot = event.clientY - box.offsetTop
+            document.onmousemove = function (event) {
+                let x = event.clientX - ol;
+                let y = event.clientY - ot;
+                let sl = document.body.scrollLeft || document.documentElement.scrollLeft;
+                let st = document.body.scrollTop || document.documentElement.scrollTop;
+
+                //将鼠标的坐标设置为盒子的偏移量
+                box.style.left = x + "px";
+                box.style.top = y + "px";
+
+            }
+        }
+
+        box.onmouseup = function (event) {
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+
+
+    </script>
+</body>
+</html>

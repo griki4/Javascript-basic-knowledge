@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件传播</title>
+    <style>
+        #box1 {
+            width: 500px;
+            height: 500px;
+            background-color: black;
+        }
+
+        #box2 {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+
+        #box3 {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<div id="box1">
+    <div id="box2">
+        <div id="box3"></div>
+    </div>
+</div>
+<script>
+    /*DOM中的事件流
+    1.事件捕获 从祖先元素开始查找子元素（DOM树） 直到找到事件的目标target 这跟冒泡的过程是相反的
+    2.事件目标 到达目标后执行回调函数
+    3.事件冒泡 从事件目标开始逐层向上冒泡
+    * */
+
+    /*addEventListener的第三个参数设置为true
+    * 就可以让事件在捕获阶段触发
+    * 捕获阶段，事件依次传递的顺序是：window --> document --> html--> body --> 父元素、子元素、目标元素。*/
+    let box1 = document.getElementById("box1");
+    let box2 = document.getElementById("box2");
+    let box3 = document.getElementById("box3");
+    box1.addEventListener("click", function () {
+        alert("box1");
+    }, true)
+
+    box2.addEventListener("click", function () {
+        alert("box2");
+    }, true)
+
+    box3.addEventListener("click", function () {
+        alert("box3");
+    }, true)//设置为true先弹出box1 设置为false则先弹出box3
+
+</script>
+</body>
+</html>

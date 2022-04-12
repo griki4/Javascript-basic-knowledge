@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制盒子移动</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        let box = document.getElementById("box");
+        document.onkeydown = function (event) {
+            event = event || window.event;
+            switch (event.keyCode) {
+                case 37:
+                    box.style.left = box.offsetLeft - 10 + "px";
+                    break;
+                case 38:
+                    box.style.top = box.offsetTop - 10 +"px";
+                    break;
+                case 39:
+                    box.style.left = box.offsetLeft + 10 + "px";
+                    break;
+                case 40:
+                    box.style.top = box.offsetTop + 10 + "px";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

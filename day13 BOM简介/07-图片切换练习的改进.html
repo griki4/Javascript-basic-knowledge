@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片切换 定时器版本</title>
+    <style>
+        #img {
+            width: 800px;
+            height: 500px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+
+        }
+    </style>
+</head>
+<body>
+<div id="img">
+    <img src="image/img1.jpg" alt="">
+    <button id="start">开始</button>
+    <button id="stop">停止</button>
+</div>
+<script>
+    let timer;
+    let img = document.getElementsByTagName("img")[0];
+    let btn01 = document.getElementById("start");
+    let btn02 = document.getElementById("stop");
+    let imgArray = ["image/img1.jpg","image/img2.jpg", "image/img3.jpg", "image/img4.jpg"];
+    let index = 0;
+    btn01.onclick = function () {
+        clearInterval(timer);//防止重复生成定时器
+        timer = setInterval(function () {
+            img.src = imgArray[index];
+            index++
+            if (index == imgArray.length) {
+                index = 0
+            }
+        },1000)
+    }
+
+    btn02.onclick = function () {
+        clearInterval(timer);
+    }
+
+</script>
+</body>
+</html>

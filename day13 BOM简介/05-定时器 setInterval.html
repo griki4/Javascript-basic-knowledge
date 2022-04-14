@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器 setInterval</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    /*setInterval
+    * 循环调用 每隔一段事件调用一次代码
+    *   -参数一 回调函数 内部封装需要循环执行的代码
+    *   -参数二 间隔的时间 单位是毫秒*/
+    //每隔一秒加一
+    let num = 0;
+    // setInterval(function () {
+    //     num++;
+    //     console.log(num)
+    // },1000)
+
+    // setInterval(fn, 1000);
+    // function fn() {
+    //     num++;
+    //     console.log(num);
+    // };
+
+
+    /*清除定时器
+    *   定时器的返回值是Number类型，我们假设它是参数一
+    *   使用clearTnterval(参数一)就可以清除定时器*/
+    //隔一秒加一 num == 10的时候清除定时器
+    let timer = setInterval(function () {
+        num++;
+        console.log(num);
+        if (num == 10) {
+            clearInterval(timer);
+        }
+    },1000)
+
+    //让网页中的一个盒子显示5秒后消失
+    let box = document.getElementById("box");
+    setTimeout(fn, 5000);
+    function fn() {
+        box.style.display = "none";
+    }
+
+
+</script>
+</body>
+</html>

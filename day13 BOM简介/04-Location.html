@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Location</title>
+</head>
+<body>
+<script>
+  /*Location封装了浏览器地址栏的URL信息
+  *
+  * location.href
+  * 获取或者设置页面的URL*/
+  console.log(location.href);//打印页面的URL
+  // location.href = "https://www.baidu.com"//页面将会自动跳转到百度首页
+
+
+  /*location.assign(str);
+  * 用于设置页面跳转 和href的作用是一样的
+  * str就是要跳转页面的URL*/
+  // location.assign("02-Navigator.html");
+
+  /*reload
+  * 重新加载页面
+  * 如果传入一个参数true 还会清除缓存并且刷新*/
+  // location.reload(true);
+
+  /*relace
+  * 使用新的页面替代当前页面
+  * 和跳转的不同之处在于不会生成历史记录，也就是不能回退*/
+  location.replace("https://www.baidu.com");
+</script>
+</body>
+</html>

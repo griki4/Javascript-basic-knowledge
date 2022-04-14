@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigator</title>
+</head>
+<body>
+<script>
+    /*navigator中的大部分属性已经不能帮助我们识别浏览器类型
+    * 只有一个属性navigator.userAgent
+    *  简称UA 它的值是一个字符串 里面包含了浏览器的信息 不同的浏览器是不同的 */
+    let ua = navigator.userAgent;
+    console.log("当前浏览器的UA是" + ua);
+    //采用正则表达式的方法，筛选出那些具有标志性的字符串
+    if (/Firefox/i.test(ua)) {
+        alert("火狐浏览器");
+    }else if (/chrome/i.test(ua)) {
+        alert("chrome浏览器");
+    }else if (/Edg/i.test(ua)) {
+        alert("Edge浏览器");
+    }else if (/msie/i.test(ua)) {
+        alert("IE浏览器");
+    }else if (/ActiveXObject/i.test(ua)) {
+        alert("Edge浏览器")
+    }
+
+
+    /*在电脑端模拟移动端的浏览器
+    * 打开浏览器的开发者工具，点击切换设备仿真按钮
+    * 在设置里面我们可以根据userAgent提供的信息 模拟各种移动设备上的浏览器
+    * 这是作为移动端开发不可或缺的工具*/
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>History</title>
+</head>
+<body>
+<div><a href="02-Navigator.html" target="_self">跳转页面</a></div>
+<script>
+    /*History对象 用于浏览器页面的跳转*/
+    //history.length
+    let a = history.length//获取浏览器页面的跳转次数 浏览器关闭后会重置为1
+    console.log(a);
+
+    //回退到上一个页面
+    // history.back()
+
+    //跳转到下一个页面
+    // history.forward()
+
+    //向前 向后跳转多个页面
+    //正数表示向前跳转 负数表示向后跳转 0表示刷新当前页面
+    history.forward(1);
+</script>
+</body>
+</html>

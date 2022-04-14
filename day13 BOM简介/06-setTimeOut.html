@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器 setTimeout</title>
+</head>
+<body>
+<script>
+    /*setTimeout 将一段代码调用 等待一段时间后才执行
+    * 用法和setInterval类似 也有两个参数
+    *   -参数一 回调函数
+    *   -参数二 等待执行的时间 */
+    let a = setTimeout(function () {
+        console.log("计时器计时完成！");
+    }, 10000)
+    clearTimeout(a);
+
+</script>
+</body>
+</html>

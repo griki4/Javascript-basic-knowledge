@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器应用</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            position: absolute;
+            left: 0;
+        }
+
+        #line {
+            height: 3000px;
+            width: 1px;
+            background-color: black;
+            position: absolute;
+            left: 800px;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+<button>点击开始移动</button>
+<br>
+<br>
+<div id="box"></div>
+<div id="line"></div>
+<script>
+    let box = document.getElementById("box");
+    let btn = document.getElementsByTagName("button")[0];
+    var timer;
+    //点击按钮后开始移动
+    btn.onclick = function () {
+        //每次点击时清除上一个定时器
+        clearInterval(timer);
+        // alert(oldValue);
+
+        //设置定时器
+        timer = setInterval(function () {
+            //获取当前显示的样式
+            let oldValue = parseInt(getStyle(box, "left"));
+            let newValue = oldValue + 26;
+            if (newValue > 800) {
+                newValue = 800;
+            };
+            if (newValue == 800) {
+                clearInterval(timer);
+            }
+            box.style.left = newValue + "px";
+
+        },100)
+    };
+
+
+
+    function getStyle(ele, style) {
+        if (window.getComputedStyle) {
+            return window.getComputedStyle(ele, null)[style];
+        }
+        return ele.currentStylr[style];
+    };
+</script>
+</body>
+</html>

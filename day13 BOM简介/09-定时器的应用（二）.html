@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>应用二</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            position: absolute;
+            left: 0;
+        }
+
+        #line {
+            height: 3000px;
+            width: 1px;
+            background-color: black;
+            position: absolute;
+            top: 0;
+            left: 800px;
+        }
+    </style>
+</head>
+<body>
+<button id="btn01">点击向右移动</button>
+<button id="btn02">点击向左移动</button>
+<br>
+<br>
+<div id="box"></div>
+<div id="line"></div>
+<script>
+    //将左右移动这个动画封装到函数中，让其可以对任何元素应用
+    let btn01 = document.getElementById("btn01");
+    let btn02 = document.getElementById("btn02");
+    let box = document.getElementById("box");
+
+    btn01.onclick = function () {
+        move(box,800,10)
+    };
+
+    btn02.onclick = function () {
+        move(box, 0, 10)
+    }
+
+
+    var timer;
+    function move(box,target,speed) {
+        clearInterval(timer);
+
+        //提前判断目标和当前元素的位置关系，speed的值可直接输入正数
+        let oldValue = parseInt(getStyle(box, "left"));
+        if (target < oldValue) {
+            speed = -speed
+        }
+        
+        timer = setInterval(function () {
+            let oldValue = parseInt(getStyle(box, "left"));
+            let newValue = oldValue + speed;
+            //判断移动的目标是否到位
+            if (speed > 0 && newValue > target || speed < 0 && newValue < target) {
+                newValue = target
+            };
+            box.style.left = newValue + 'px';
+            if (newValue == target) {
+                clearInterval(timer);
+            }
+        },30)
+    }
+
+    function getStyle(ele, style) {
+        if (window.getComputedStyle) {
+            return window.getComputedStyle(ele, null)[style];
+        }
+        return ele.currentStylr[style];
+    };
+</script>
+</body>
+</html>

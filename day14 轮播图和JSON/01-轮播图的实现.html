@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer {
+            width: 820px;
+            height: 600px;
+            background-color: skyblue;
+            margin: 50px auto;
+            padding:  10px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #imgList {
+            list-style: none;
+            height: 600px;
+            position: absolute;
+            left: 0;
+        }
+
+        #imgList li img {
+            width: 800px;
+            height: 600px;
+        }
+
+        #imgList li {
+            float: left;
+            width: 800px;
+            height: 600px;
+            margin: 0 10px;
+        }
+
+        #nav {
+            position: absolute;
+            bottom: 20px;
+        }
+
+        #nav a {
+            float: left;
+            width: 25px;
+            height: 25px;
+            background-color: red;
+            opacity: 0.5;
+            margin: 0 10px;
+        }
+
+        #nav a:hover {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <ul id="imgList">
+        <li><img src="image/img1.jpg" alt=""></li>
+        <li><img src="image/img2.jpg" alt=""></li>
+        <li><img src="image/img3.jpg" alt=""></li>
+        <li><img src="image/img4.jpg" alt=""></li>
+<!--        <li><img src="image/img1.jpg" alt=""></li>-->
+    </ul>
+    <div id="nav">
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+    </div>
+</div>
+<script src="tools.js"></script>
+<script>
+    let outer = document.getElementById("outer");
+    let imgList = document.getElementById("imgList");
+    let imgArray = document.getElementsByTagName("li");
+    let nav = document.getElementById("nav");
+    let allA = document.getElementsByTagName("a");
+    let index = 0;
+    imgList.style.width = 820 * imgArray.length + "px";
+    nav.style.left = (outer.offsetWidth - nav.offsetWidth) / 2 + 'px';
+    allA[index].style.backgroundColor = "gray";
+
+
+    for (let i = 0; i < allA.length; i++) {
+        //标识a自己的索引
+        allA[i].num = i;
+        //每一个小点添加单击响应事件，切换到对应的图片
+        allA[i].onclick = function () {
+            index = this.num;
+            // imgList.style.left = -820 * index + "px";
+            move(imgList,"left",-820*index,50,function () {
+
+            })
+            setA();
+        }
+
+
+        autoChange();
+        //点击的时候，轮播图会自动跳回到第一张图片
+
+        function setA() {
+            if (index >= imgArray.length-1) {
+                index = 0;
+                imgList.style.left = 0;
+            }
+            for (let i = 0; i < allA.length; i++) {
+                allA[i].style.backgroundColor = "";
+            }
+            allA[index].style.backgroundColor = "gray";
+        }
+
+        function autoChange() {
+            setInterval(function () {
+                index++;
+                console.log(index);
+                index %= imgArray.length;
+                move(imgList,"left",-820*index,50,function () {
+                    setA();
+                })
+
+            },6000)
+        }
+    }
+</script>
+</body>
+</html>

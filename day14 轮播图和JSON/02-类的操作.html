@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类的操作</title>
+    <style>
+        .b1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .b2 {
+            /*width: 400px;*/
+            height: 400px;
+            background-color: skyblue;
+        }
+
+
+    </style>
+</head>
+<body>
+    <button id="btn01">点击修改下方盒子样式</button>
+    <br>
+    <br>
+    <div id="box1" class="b1"></div>
+    <script>
+        let box = document.getElementById("box1");
+        let btn01 = document.getElementById("btn01");
+
+        //点击按钮 改变样式
+        /*这样的方式修改样式
+        * 每修改一个样式 浏览器就渲染一次页面 浪费性能
+        * 且在需要修改多个样式的时候也不方便*/
+        btn01.onclick = function () {
+            /*box.style.width = "400px";
+            box.style.height = "400px";
+            box.style.backgroundColor = "skyblue";*/
+
+            //利用class属性 直接对切换目标对象的类名
+            // box.className = "b2";
+
+            //要求同时具有两个类的样式
+            // box.className += " b2";
+            /*addClass(box, "b2");
+            let c = hasClass(box, "b2");
+            console.log(c);*/
+
+            //删除样式
+            // removeClass(box, "b2");
+
+            //切换样式
+            toggle(box, "b2");
+        };
+
+        //定义一个函数为指定对象添加类
+        function addClass(obj, className) {
+            if (!hasClass(obj, className)) {
+                box.className += " " + className;
+            }
+        };
+
+
+        //防止重复添加样式 检查是否已有样式
+        function hasClass(obj, className) {
+            //利用正则表达式
+            let reg = new RegExp("\\b" + className + "\\b");//类名必须是独立存在的
+            return reg.test(obj.className);
+        }
+
+        //删除样式
+        function removeClass(obj, className) {
+            //替换字符串
+            let reg = new RegExp("\\b" + className + "\\b");
+            obj.className = obj.className.replace(reg, "");
+        }
+
+        //切换样式
+        /*有则删除 无则添加*/
+        function toggle(obj, className) {
+            if (hasClass(obj, className)) {
+                removeClass(obj, className);
+            }else{
+                addClass(obj, className);
+            }
+        };
+    </script>
+</body>
+</html>

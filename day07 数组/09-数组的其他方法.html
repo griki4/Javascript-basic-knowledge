@@ -55,6 +55,14 @@
         console.log(a4 typeof Array)//true
         console.log(Array.isArray(a4))//true 该方法专为检测数组而生，并且能够区分对象和数组
         
+        //数组的迭代器方法
+        //返回数组的索引、元素，索引和元素构成的键值对
+        //ES6新增的解构赋值也是可以使用迭代器方法
+        let a = a4.keys()
+        let b = a4.values()
+        let c = a4.entries()
+        console.log(a, b, c)
+        
     </script>
 </head>
 <body>
